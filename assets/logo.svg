@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Au Q Mia</title>
+  <desc id="desc">Logotipo tipográfico do petshop Au Q Mia com uma pata e elementos que lembram alquimia.</desc>
+  <rect width="800" height="240" rx="36" fill="#fff7ed"/>
+  <circle cx="110" cy="100" r="28" fill="#7c3aed"/>
+  <circle cx="165" cy="62" r="21" fill="#7c3aed"/>
+  <circle cx="217" cy="72" r="21" fill="#7c3aed"/>
+  <circle cx="245" cy="116" r="21" fill="#7c3aed"/>
+  <path d="M128 140c0-34 24-54 56-54s56 20 56 54c0 27-21 44-56 44s-56-17-56-44z" fill="#7c3aed"/>
+  <text x="295" y="135" font-family="Georgia, serif" font-size="82" font-weight="700" fill="#1f2937">Au Q Mia</text>
+  <text x="300" y="178" font-family="Arial, sans-serif" font-size="24" letter-spacing="4" fill="#6b7280">PETSHOP</text>
+  <circle cx="680" cy="64" r="8" fill="#f59e0b"/>
+  <path d="M680 78v52M654 104h52" stroke="#f59e0b" stroke-width="8" stroke-linecap="round"/>
+</svg>
