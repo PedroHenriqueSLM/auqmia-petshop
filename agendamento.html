@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro do cliente e pet e agendamento de banho e tosa no Au Q Mia.">
+  <title>Au Q Mia | Cadastro e Agendamento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/logo.svg" alt="Logo Au Q Mia Petshop"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul></div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card form-card">
+          <div class="card-body p-4 p-lg-5">
+            <h1 class="section-title">Cadastro e agendamento</h1>
+            <p>Preencha os dados do responsável e do pet para agendar banho e tosa.</p>
+
+            <form id="cadastro-form" class="needs-validation" novalidate>
+              <fieldset class="mb-4">
+                <legend class="h4">Dados do cliente</legend>
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="nome">Nome completo <span aria-hidden="true">*</span></label><input class="form-control" id="nome" name="nome" type="text" placeholder="Digite seu nome completo" autocomplete="name" required><div class="invalid-feedback">Informe seu nome.</div></div>
+                  <div class="col-md-6"><label class="form-label" for="cpf">CPF <span aria-hidden="true">*</span></label><input class="form-control" id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" required><div class="invalid-feedback">Informe o CPF.</div></div>
+                  <div class="col-12"><label class="form-label" for="endereco">Endereço <span aria-hidden="true">*</span></label><input class="form-control" id="endereco" name="endereco" type="text" placeholder="Rua, número, bairro, cidade e estado" autocomplete="street-address" required><div class="invalid-feedback">Informe o endereço.</div></div>
+                  <div class="col-md-4"><label class="form-label" for="telefone">Telefone <span aria-hidden="true">*</span></label><input class="form-control" id="telefone" name="telefone" type="tel" placeholder="(11) 99999-9999" autocomplete="tel" required><div class="invalid-feedback">Informe o telefone.</div></div>
+                  <div class="col-md-8"><label class="form-label" for="email">E-mail <span aria-hidden="true">*</span></label><input class="form-control" id="email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required><div class="invalid-feedback">Informe um e-mail válido.</div></div>
+                  <div class="col-12">
+                    <fieldset>
+                      <legend class="form-label mb-2">Sexo</legend>
+                      <div class="d-flex gap-4 flex-wrap">
+                        <div class="form-check"><input class="form-check-input" id="sexo-feminino" name="sexo" value="Feminino" type="radio"><label class="form-check-label" for="sexo-feminino">Feminino</label></div>
+                        <div class="form-check"><input class="form-check-input" id="sexo-masculino" name="sexo" value="Masculino" type="radio"><label class="form-check-label" for="sexo-masculino">Masculino</label></div>
+                        <div class="form-check"><input class="form-check-input" id="sexo-nao-informar" name="sexo" value="Prefiro não informar" type="radio" checked><label class="form-check-label" for="sexo-nao-informar">Prefiro não informar</label></div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="mb-4">
+                <legend class="h4">Dados do pet</legend>
+                <div class="row g-3">
+                  <div class="col-md-4"><label class="form-label" for="pet-nome">Nome do pet <span aria-hidden="true">*</span></label><input class="form-control" id="pet-nome" name="pet-nome" type="text" placeholder="Ex.: Thor" required><div class="invalid-feedback">Informe o nome do pet.</div></div>
+                  <div class="col-md-4"><label class="form-label" for="pet-especie">Espécie <span aria-hidden="true">*</span></label><select class="form-select" id="pet-especie" name="pet-especie" required><option value="" selected disabled>Selecione</option><option>Cão</option><option>Gato</option><option>Outro</option></select><div class="invalid-feedback">Selecione a espécie.</div></div>
+                  <div class="col-md-4"><label class="form-label" for="pet-raca">Raça <span aria-hidden="true">*</span></label><input class="form-control" id="pet-raca" name="pet-raca" type="text" placeholder="Ex.: Golden Retriever" required><div class="invalid-feedback">Informe a raça.</div></div>
+                  <div class="col-md-4"><label class="form-label" for="pet-idade">Idade (anos) <span aria-hidden="true">*</span></label><input class="form-control" id="pet-idade" name="pet-idade" type="number" min="0" max="30" placeholder="Ex.: 4" required><div class="invalid-feedback">Informe uma idade entre 0 e 30 anos.</div></div>
+                  <div class="col-md-8"><label class="form-label" for="observacoes">Observações sobre o pet</label><textarea class="form-control" id="observacoes" name="observacoes" rows="3" placeholder="Ex.: comportamento, cuidados especiais ou alergias relatadas pelo responsável."></textarea></div>
+                </div>
+              </fieldset>
+
+              <fieldset class="mb-4">
+                <legend class="h4">Serviço e agendamento</legend>
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="servico">Serviço <span aria-hidden="true">*</span></label><select class="form-select" id="servico" name="servico" required><option value="" selected disabled>Selecione o serviço</option><option>Banho e tosa</option></select><div class="invalid-feedback">Selecione um serviço.</div></div>
+                  <div class="col-md-6"><label class="form-label" for="modalidade">Método de agendamento <span aria-hidden="true">*</span></label><select class="form-select" id="modalidade" name="modalidade" required><option value="" selected disabled>Selecione</option><option>Tele-busca</option><option>Entrega do pet no local</option></select><div class="invalid-feedback">Selecione a modalidade.</div></div>
+                  <div class="col-md-6"><label class="form-label" for="data-agendamento">Data <span aria-hidden="true">*</span></label><input class="form-control" id="data-agendamento" name="data-agendamento" type="date" required><div class="invalid-feedback">Escolha uma data válida.</div></div>
+                  <div class="col-md-6"><label class="form-label" for="hora-agendamento">Horário <span aria-hidden="true">*</span></label><input class="form-control" id="hora-agendamento" name="hora-agendamento" type="time" min="09:00" max="18:00" required><div class="invalid-feedback">Escolha um horário entre 09h e 18h.</div></div>
+                </div>
+              </fieldset>
+
+              <div class="form-check mb-4"><input class="form-check-input" id="aceite" name="aceite" type="checkbox" required><label class="form-check-label" for="aceite">Confirmo que os dados informados estão corretos e aceito o uso deles para este agendamento. <span aria-hidden="true">*</span></label><div class="invalid-feedback">É necessário confirmar os dados.</div></div>
+
+              <button class="btn btn-primary btn-lg" type="submit">Cadastrar e preparar agendamento</button>
+              <div id="form-feedback" class="mt-4" tabindex="-1" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-5 py-4"><div class="container"><p class="mb-1"><strong>Au Q Mia Petshop</strong> · (11) 4000-2026 · contato@auqmia.com.br</p><p class="mb-0"><a href="index.html">Início</a> · <a href="produtos.html">Produtos</a> · <a href="servicos.html">Serviços</a> · <a href="contato.html">Contato</a> · © 2026</p></div></footer>
+  <script>
+    // Preenche serviço/modalidade quando o usuário chega pela página de serviços.
+    const parametros = new URLSearchParams(window.location.search);
+    const servicoUrl = parametros.get("servico");
+    const modalidadeUrl = parametros.get("modalidade");
+    if (servicoUrl) document.getElementById("servico").value = servicoUrl;
+    if (modalidadeUrl) document.getElementById("modalidade").value = modalidadeUrl;
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

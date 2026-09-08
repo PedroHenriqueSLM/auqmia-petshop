@@ -3,152 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de produtos Au Q Mia para cães e gatos.">
   <title>Au Q Mia | Produtos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
   <header>
-    <p><img src="assets/logo.svg" alt="Logo Au Q Mia Petshop" width="320"></p>
-    <p>Produtos para cães e gatos.</p>
-    <nav aria-label="Navegação principal">
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a> |
-      <a href="contato.html">Contato</a>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/logo.svg" alt="Logo Au Q Mia Petshop"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="produtos.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <hr>
   </header>
 
-  <main>
-    <h2>Produtos</h2>
-    <p>Confira nossa seleção de produtos. Nesta fase, os itens são apresentados de forma estática, sem funcionalidades em JavaScript.</p>
+  <main id="conteudo" class="container py-5">
+    <div class="row align-items-end g-3 mb-4">
+      <div class="col-md-8">
+        <h1 class="section-title mb-1">Produtos</h1>
+        <p class="mb-0">Confira nossa seleção. Use a busca para encontrar um produto pelo nome ou categoria.</p>
+      </div>
+      <div class="col-md-4">
+        <label for="busca-produto" class="form-label fw-semibold">Buscar produto</label>
+        <input id="busca-produto" class="form-control" type="search" placeholder="Ex.: ração, cama, shampoo" aria-describedby="contador-produtos">
+        <div id="contador-produtos" class="form-text" aria-live="polite">18 produto(s) encontrado(s).</div>
+      </div>
+    </div>
 
-    <section id="acessorios">
-      <h2>Acessórios</h2>
-      <article>
-        <h3>Cama Conforto P</h3>
-        <img src="../auqmia-petshop/assets/Cama_Pet.jpg" alt="Cama para pet tamanho pequeno" width="240" height="180">
-        <p>Cama macia para cães e gatos de pequeno porte.</p>
-        <p><strong>R$ 79,90</strong></p>
-      </article>
-      <article>
-        <h3>Brinquedo Bola Colorida</h3>
-        <img src="../auqmia-petshop/assets/Bola_Colorida.png" alt="Bola colorida para cachorro" width="240" height="180">
-        <p>Brinquedo resistente para diversão e atividades do dia a dia.</p>
-        <p><strong>R$ 24,90</strong></p>
-      </article>
-      <article>
-        <h3>Peitoral Ajustável M</h3>
-        <img src="../auqmia-petshop/assets/Peitoral_Ajustavel.png" alt="Peitoral ajustável para cachorro" width="240" height="180">
-        <p>Peitoral confortável e ajustável para passeios.</p>
-        <p><strong>R$ 49,90</strong></p>
-      </article>
-      <article>
-        <h3>Comedouro Inox 500 ml</h3>
-        <img src="../auqmia-petshop/assets/Comedouro_Inox.png" alt="Comedouro de aço inox" width="240" height="180">
-        <p>Comedouro de aço inoxidável, fácil de higienizar.</p>
-        <p><strong>R$ 34,90</strong></p>
-      </article>
-      <article>
-        <h3>Coleira Clássica</h3>
-        <img src="../auqmia-petshop/assets/Coleira_Classica.png" alt="Coleira para cachorro" width="240" height="180">
-        <p>Coleira leve para identificação e passeios.</p>
-        <p><strong>R$ 29,90</strong></p>
-      </article>
-      <article>
-        <h3>Arranhador para Gatos</h3>
-        <img src="../auqmia-petshop/assets/Arranhador_Gatos.png" alt="Arranhador para gatos" width="240" height="180">
-        <p>Arranhador compacto para entretenimento e bem-estar felino.</p>
-        <p><strong>R$ 89,90</strong></p>
-      </article>
+    <section id="acessorios" class="mb-5" aria-labelledby="titulo-acessorios">
+      <h2 id="titulo-acessorios" class="section-title">Acessórios</h2>
+      <div class="row g-4">
+        <!-- Cada card recebe data-product-card para o filtro JavaScript. -->
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Cama_Pet.jpg" class="card-img-top" alt="Cama Conforto P para cães e gatos"><div class="card-body"><h3 class="h5">Cama Conforto P</h3><p>Cama macia para cães e gatos de pequeno porte.</p><span class="price">R$ 79,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Bola_Colorida.png" class="card-img-top" alt="Bola colorida para brincadeiras de cachorro"><div class="card-body"><h3 class="h5">Brinquedo Bola Colorida</h3><p>Brinquedo resistente para diversão e atividades.</p><span class="price">R$ 24,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Peitoral_Ajustavel.png" class="card-img-top" alt="Peitoral ajustável para cachorro"><div class="card-body"><h3 class="h5">Peitoral Ajustável M</h3><p>Peitoral confortável e ajustável para passeios.</p><span class="price">R$ 49,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Comedouro_Inox.png" class="card-img-top" alt="Comedouro de aço inoxidável de 500 mililitros"><div class="card-body"><h3 class="h5">Comedouro Inox 500 ml</h3><p>Comedouro durável e fácil de higienizar.</p><span class="price">R$ 34,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Coleira_Classica.png" class="card-img-top" alt="Coleira clássica para cachorro"><div class="card-body"><h3 class="h5">Coleira Clássica</h3><p>Coleira leve para identificação e passeios.</p><span class="price">R$ 29,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Arranhador_Gatos.png" class="card-img-top" alt="Arranhador compacto para gatos"><div class="card-body"><h3 class="h5">Arranhador para Gatos</h3><p>Opção para entretenimento e bem-estar felino.</p><span class="price">R$ 89,90</span></div></article></div>
+      </div>
     </section>
 
-    <section id="racoes">
-      <h2>Rações não perecíveis</h2>
-      <article>
-        <h3>Ração Cães Adultos 10 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Caes_10kg.png" alt="Ração para cães adultos" width="240" height="180">
-        <p>Alimento seco completo para cães adultos.</p>
-        <p><strong>R$ 119,90</strong></p>
-      </article>
-      <article>
-        <h3>Ração Cães Filhotes 10 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Caes_Filhote_10kg.png" alt="Ração para filhotes de cachorro" width="240" height="180">
-        <p>Alimento seco para apoiar a fase de crescimento dos filhotes.</p>
-        <p><strong>R$ 129,90</strong></p>
-      </article>
-      <article>
-        <h3>Ração Gatos Adultos 10 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Gatos_10kg.png" alt="Ração para gatos adultos" width="240" height="180">
-        <p>Ração seca completa para gatos adultos.</p>
-        <p><strong>R$ 139,90</strong></p>
-      </article>
-      <article>
-        <h3>Ração Gatos Castrados 10 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Gatos_Castrados_10kg.png" alt="Ração para gatos castrados" width="240" height="180">
-        <p>Opção de alimentação seca voltada para gatos castrados.</p>
-        <p><strong>R$ 149,90</strong></p>
-      </article>
-      <article>
-        <h3>Ração Cães Pequenos 3 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Caes_Pequenos_3kg.png" alt="Ração para cães de pequeno porte" width="240" height="180">
-        <p>Ração seca para cães adultos de pequeno porte.</p>
-        <p><strong>R$ 54,90</strong></p>
-      </article>
-      <article>
-        <h3>Ração Gatos Filhotes 3 kg</h3>
-        <img src="../auqmia-petshop/assets/Racao_Gatos_Filhotes_3kg.png" alt="Ração para gatos filhotes" width="240" height="180">
-        <p>Alimento seco para apoiar o desenvolvimento de gatos filhotes.</p>
-        <p><strong>R$ 69,90</strong></p>
-      </article>
+    <section id="racoes" class="mb-5" aria-labelledby="titulo-racoes">
+      <h2 id="titulo-racoes" class="section-title green">Rações não perecíveis</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Caes_10kg.png" class="card-img-top" alt="Ração para cães adultos, embalagem de 10 quilogramas"><div class="card-body"><h3 class="h5">Ração Cães Adultos 10 kg</h3><p>Alimento seco completo para cães adultos.</p><span class="price">R$ 119,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Caes_Filhote_10kg.png" class="card-img-top" alt="Ração para filhotes de cachorro, embalagem de 10 quilogramas"><div class="card-body"><h3 class="h5">Ração Cães Filhotes 10 kg</h3><p>Alimento seco para a fase de crescimento.</p><span class="price">R$ 129,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Gatos_10kg.png" class="card-img-top" alt="Ração para gatos adultos, embalagem de 10 quilogramas"><div class="card-body"><h3 class="h5">Ração Gatos Adultos 10 kg</h3><p>Ração seca completa para gatos adultos.</p><span class="price">R$ 139,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Gatos_Castrados_10kg.png" class="card-img-top" alt="Ração para gatos castrados, embalagem de 10 quilogramas"><div class="card-body"><h3 class="h5">Ração Gatos Castrados 10 kg</h3><p>Opção de alimentação seca para gatos castrados.</p><span class="price">R$ 149,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Caes_Pequenos_3kg.png" class="card-img-top" alt="Ração para cães adultos de pequeno porte, embalagem de 3 quilogramas"><div class="card-body"><h3 class="h5">Ração Cães Pequenos 3 kg</h3><p>Ração seca para cães adultos de pequeno porte.</p><span class="price">R$ 54,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Racao_Gatos_Filhotes_3kg.png" class="card-img-top" alt="Ração para gatos filhotes, embalagem de 3 quilogramas"><div class="card-body"><h3 class="h5">Ração Gatos Filhotes 3 kg</h3><p>Alimento seco para o desenvolvimento de filhotes.</p><span class="price">R$ 69,90</span></div></article></div>
+      </div>
     </section>
 
-    <section id="higiene">
-      <h2>Higiene e limpeza</h2>
-      <article>
-        <h3>Tapete Higiênico 30 unidades</h3>
-        <img src="../auqmia-petshop/assets/Tapete_Higienico.png" alt="Tapete higiênico para pets" width="240" height="180">
-        <p>Tapetes absorventes para facilitar a rotina de higiene.</p>
-        <p><strong>R$ 49,90</strong></p>
-      </article>
-      <article>
-        <h3>Lenços Umedecidos</h3>
-        <img src="../auqmia-petshop/assets/Lencos_Umedecidos.png" alt="Lenços umedecidos para pets" width="240" height="180">
-        <p>Lenços para limpeza rápida de patas e pelos.</p>
-        <p><strong>R$ 17,90</strong></p>
-      </article>
-      <article>
-        <h3>Shampoo Pet Neutro</h3>
-        <img src="../auqmia-petshop/assets/Shampoo_Pet_Neutro.png" alt="Shampoo neutro para pet" width="240" height="180">
-        <p>Shampoo de uso pet para rotina de higiene.</p>
-        <p><strong>R$ 32,90</strong></p>
-      </article>
-      <article>
-        <h3>Fraldas Descartáveis</h3>
-        <img src="../auqmia-petshop/assets/Fraldas_Descartaveis.png" alt="Fraldas descartáveis para pets" width="240" height="180">
-        <p>Fraldas descartáveis para cães em situações específicas.</p>
-        <p><strong>R$ 39,90</strong></p>
-      </article>
-      <article>
-        <h3>Areia Higiênica para Gatos</h3>
-        <img src="../auqmia-petshop/assets/Areia_Higienica_Gatos.png" alt="Areia higiênica para gatos" width="240" height="180">
-        <p>Areia para uso diário na caixa sanitária.</p>
-        <p><strong>R$ 27,90</strong></p>
-      </article>
-      <article>
-        <h3>Desinfetante para Ambiente Pet</h3>
-        <img src="../auqmia-petshop/assets/Desinfetante_Ambiente_Pet.png" alt="Desinfetante para ambientes com pets" width="240" height="180">
-        <p>Produto para higienização de superfícies do ambiente do pet.</p>
-        <p><strong>R$ 28,90</strong></p>
-      </article>
+    <section id="higiene" aria-labelledby="titulo-higiene">
+      <h2 id="titulo-higiene" class="section-title blue">Higiene e limpeza</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Tapete_Higienico.png" class="card-img-top" alt="Pacote de tapetes higiênicos para pets"><div class="card-body"><h3 class="h5">Tapete Higiênico 30 unidades</h3><p>Tapetes absorventes para facilitar a higiene.</p><span class="price">R$ 49,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Lencos_Umedecidos.png" class="card-img-top" alt="Pacote de lenços umedecidos para pets"><div class="card-body"><h3 class="h5">Lenços Umedecidos</h3><p>Para limpeza rápida de patas e pelos.</p><span class="price">R$ 17,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Shampoo_Pet_Neutro.png" class="card-img-top" alt="Frasco de shampoo pet neutro"><div class="card-body"><h3 class="h5">Shampoo Pet Neutro</h3><p>Shampoo para a rotina de higiene do pet.</p><span class="price">R$ 32,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Fraldas_Descartaveis.png" class="card-img-top" alt="Pacote de fraldas descartáveis para pets"><div class="card-body"><h3 class="h5">Fraldas Descartáveis</h3><p>Fraldas para cães em situações específicas.</p><span class="price">R$ 39,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Areia_Higienica_Gatos.png" class="card-img-top" alt="Embalagem de areia higiênica para gatos"><div class="card-body"><h3 class="h5">Areia Higiênica para Gatos</h3><p>Areia para uso diário na caixa sanitária.</p><span class="price">R$ 27,90</span></div></article></div>
+        <div class="col-sm-6 col-lg-4 product-col"><article class="card product-card" data-product-card><img src="assets/Desinfetante_Ambiente_Pet.png" class="card-img-top" alt="Frasco de desinfetante para ambiente com pets"><div class="card-body"><h3 class="h5">Desinfetante para Ambiente Pet</h3><p>Para higienização de superfícies do ambiente.</p><span class="price">R$ 28,90</span></div></article></div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <hr>
-    <p><strong>Au Q Mia Petshop</strong> — São Paulo/SP</p>
-    <p>(11) 4000-2026 | contato@auqmia.com.br</p>
-    <p><a href="index.html">Início</a> | <a href="servicos.html">Serviços</a> | <a href="contato.html">Contato</a></p>
-    <p>© 2026 Au Q Mia.</p>
-  </footer>
+  <footer class="mt-5 py-4"><div class="container"><div class="row g-4"><div class="col-md-6"><h2 class="h5">Au Q Mia Petshop</h2><p class="mb-1">Rua dos Animais, 123 — São Paulo/SP</p><p class="mb-0">(11) 4000-2026 · contato@auqmia.com.br</p></div><div class="col-md-6"><p><a href="index.html">Início</a> · <a href="servicos.html">Serviços</a> · <a href="agendamento.html">Agendamento</a> · <a href="contato.html">Contato</a></p><p class="mb-0">© 2026 Au Q Mia — Autor: Pedro Mariano.</p></div></div></div></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
